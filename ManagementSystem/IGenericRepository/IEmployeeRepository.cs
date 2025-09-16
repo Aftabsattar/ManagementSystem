@@ -9,4 +9,6 @@ public interface IEmployeeRepository
     public Task<bool> UpdateEmployee(int id, AddEmployeeDTO employee);
     public Task<bool> DeleteEmployee(int id);
     public Task<ShowEmployeeDTO> GetByIdEmployee(int id);
+    public Task<List<ShowEmployeeDTO>> GetEmployeeListByDepartmentId(int departmentId);
+
 }

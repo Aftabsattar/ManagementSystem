@@ -39,7 +39,7 @@ namespace ManagementSystem.Controllers
         public async Task<IActionResult> UpdateEmployee(int id, [FromBody] AddEmployeeDTO employee)
         {
             var result = await _employeeRepository.UpdateEmployee(id, employee);
-            return Ok(result);   
+            return Ok(result);
         }
 
         [HttpDelete("{id}")]
@@ -47,6 +47,14 @@ namespace ManagementSystem.Controllers
         {
             var result = await _employeeRepository.DeleteEmployee(id);
             return Ok(result);
+        }
+
+        [HttpGet("department/{departmentId}")]
+        public async Task<IActionResult> GetListEmployee(int departmentId)
+        {
+            var result = await _employeeRepository.GetEmployeeListByDepartmentId(departmentId);
+            return Ok(result);
+
         }
     }
 }
